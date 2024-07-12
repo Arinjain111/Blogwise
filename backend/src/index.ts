@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
-import { sign, verify } from 'hono/jwt'
 import userRouter from './routes/user'
 import blogRouter from './routes/post'
+import { cors } from 'hono/cors';
 
 const app = new Hono<{
   Bindings: {
@@ -9,7 +9,7 @@ const app = new Hono<{
     JWT_SECRET: string,
   },
 }>();
-
+app.use("/*", cors());
 app.route("/api/v1/user", userRouter);
 app.route("/api/v1/post", blogRouter);
 
