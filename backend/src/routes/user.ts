@@ -4,12 +4,12 @@ import { withAccelerate } from '@prisma/extension-accelerate'
 import { sign } from 'hono/jwt'
 import { signupInput } from '@arinjain111/medium-commons'
 
-const userRouter = new Hono<{
+export const userRouter = new Hono<{
     Bindings: {
         DATABASE_URL: string,
         JWT_SECRET: string
     }
-}>()
+}>();
 
 userRouter.post('/signup', async (c) => {
   
@@ -32,8 +32,8 @@ userRouter.post('/signup', async (c) => {
             name: body.name
         }
       });
-      const token = await sign({ id: user.id }, c.env.JWT_SECRET);
-      return c.json({ token });
+      const jwt = await sign({ id: user.id }, c.env.JWT_SECRET);
+      return c.text(jwt);
     } catch(e) {
       c.status(403);
       return c.json({error: "User already exists with this email"});
@@ -46,7 +46,7 @@ userRouter.post('/signup', async (c) => {
     }).$extends(withAccelerate());
   
     const body = await c.req.json()
-    const user = await prisma.user.findUnique({
+    const user = await prisma.user.findFirst({
       where: {
         email: body.email,
         password: body.password,
@@ -56,8 +56,6 @@ userRouter.post('/signup', async (c) => {
       c.status(404)
       return c.json({error: "user not found"})
     }
-    const token = await sign({id: user?.id}, c.env.JWT_SECRET);
-    return c.json({ token })
+    const jwt = await sign({id: user.id}, c.env.JWT_SECRET);
+    return c.text(jwt)
   });
-
-export default userRouter
