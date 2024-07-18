@@ -29,7 +29,7 @@ export const Auth = ({ type }: { type: "signin" | "signup" }) => {
             <div>
                 <div className="px-10">
                     <div className="text-4xl font-semibold" >
-                        Create an Account
+                        {type === "signin" ? "Welcome Back": "Create an account"}
                     </div>
                     <div className="text-base pb-8 pt-2 flex justify-center">
                         { type === "signin" ? "Dont have an account ?": "Already have an account ?" }
