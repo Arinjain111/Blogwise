@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-arin {
+    font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.font-arin2 {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+  
