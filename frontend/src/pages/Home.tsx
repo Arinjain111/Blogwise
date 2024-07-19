@@ -8,7 +8,7 @@ export const Home = () => {
                         <Link to={'/OurStory'}>Our story</Link>
                     </div>
                     <div>
-                        <Link to={'/Write'}>Write</Link>
+                        <Link to={'/Signin'}>Write</Link>
                     </div>
                     <div>
                         <Link to={'/signup'} >    

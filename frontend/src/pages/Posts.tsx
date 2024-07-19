@@ -1,5 +1,6 @@
 import { Appbar } from "../components/AppBar"
 import { PostCard } from "../components/PostCard"
+import { PostSkeleton } from "../components/PostSkeleton"
 import { usePosts } from "../Hooks/Index"
 
 export const Posts = () => {
@@ -8,7 +9,16 @@ export const Posts = () => {
     if (loading) {
         return <div>
             <Appbar />
-            loading... 
+            <div className="pt-4 w-full flex justify-center">
+                <div>    
+                    <PostSkeleton />
+                    <PostSkeleton />
+                    <PostSkeleton />
+                    <PostSkeleton />
+                    <PostSkeleton />
+                    <PostSkeleton />
+                </div>
+            </div>
         </div>
     }
     return <div>
