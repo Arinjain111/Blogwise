@@ -16,6 +16,6 @@ export const Post = () => {
     }
     
     return <div>
-        <PostPage post={post} />
+        {post ? <PostPage post={post} /> :null}
     </div>
 }
