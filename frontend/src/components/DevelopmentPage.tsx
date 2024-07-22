@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 export const DevelopmentPage = () => {
     return <div className="flex flex-col justify-center h-screen bg-black">
-            <div className="flex justify-center">
+            <div className="flex justify-center items-center">
                 <div className="text-white border-r px-5">
                     404
                 </div>
