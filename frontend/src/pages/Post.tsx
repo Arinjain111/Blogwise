@@ -14,7 +14,8 @@ export const Post = () => {
             loading...
         </div>
     }
-    
+    // will check if the post Type check will reload or not.
+    // if not loaded will not render the post
     return <div>
         {post ? <PostPage post={post} /> :null}
     </div>
