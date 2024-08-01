@@ -5,3 +5,6 @@ compatibility_date = "2023-12-01"
 DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiN2Q5MTgzNjQtMDM2NC00NDM1LWFjMDgtMTRjODFmOWQ5YTFiIiwidGVuYW50X2lkIjoiOWQyYmVkNmRjMWM2OGRhM2Y1OWFkZWYzYjMzOGYwZTUwYzcyOWJkMjc4YTZlMGIwNmFhMzk4ODhmOWJmYzQwYSIsImludGVybmFsX3NlY3JldCI6ImQyNWQ5MTg1LTVmYzItNGI1OS04MDBhLTZkMjExNDU2Y2E5NyJ9.59QwJNPp6kjmkGafeN9K4WAZijn1IBKKQTvI9FbVbeo"
 
 JWT_SECRET = "asdasd"
+
+[placement]
+mode = "smart"
