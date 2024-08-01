@@ -6,9 +6,9 @@ export const PostPage = ({ post }: {post: Post}) => {
     return <div>
         <Appbar />
         <div className="flex justify-center">
-            <div className="grid grid-cols-12 max-w-screen-xl px-10 pt-20">
+            <div className="grid md:grid-cols-12 max-w-screen-xl px-4 md:px-10 pt-6 md:pt-20">
                 <div className=" col-span-8">
-                    <div className="text-5xl font-extrabold">
+                    <div className=" text-3xl md:text-5xl font-extrabold">
                         {post.title}
                     </div>
                     <div className="text-gray-500 pt-3">
@@ -18,11 +18,11 @@ export const PostPage = ({ post }: {post: Post}) => {
                     {post.content}
                     </div>
                 </div>
-                <div className="col-span-4 px-20">
-                    <div className="pt-4 font-bold text-gray-600">
-                        Author
+                <div className="col-span-8 md:col-span-4 px-1 md:px-20">
+                    <div className="pt-12 md:pt-4 font-bold text-gray-600">
+                        <div className="pl-2 md:pl-1">Author</div>
                         <div className="flex">
-                            <div className="pr-2 flex flex-col justify-center pb-10">
+                            <div className="pr-2 flex flex-col justify-center pb-5 md:pb-10">
                                 <Avatar size="big" name={post.author.name || "Anonymous"}/>
                             </div>
                             <div>
